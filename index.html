@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- BASICS -->
@@ -37,7 +37,7 @@
         </button>
         <div class="navbar-logo">
           <a href="#header" >
-            <img data-0="width:155px;" data-300=" width:120px;" src="img/logo6.png" alt="Cloubiot">
+            <img data-0="width:155px;" class="logo-adjzt" data-300=" width:120px;" src="img/logo6.png" alt="Cloubiot">
             <!-- <div data-0="width:155px;" data-300=" width:120px;"><span>Cloubiot</span> <span>Solutions</span> </div> -->
           </a>
         </div>
@@ -293,8 +293,8 @@
       <div class="row">
         <h2 style="text-align: center; margin-top: 6%;">Products</h2>
         <section id="myBtnContainer">
-            <button class="btn3 active" onclick="filterSelectionProd('all-products')"> All Products</button>
-            <button class="btn3" onclick="filterSelectionProd('prod1')">AviationRating</button>
+            <!-- <button class="btn3 active" onclick="filterSelectionProd('all-products')"> All Products</button> -->
+            <button class="btn3 active" onclick="filterSelectionProd('prod1')">AviationRating</button>
             <button class="btn3" onclick="filterSelectionProd('prod2')">Ticketing Tool<div></div></button>
             <button class="btn3" onclick="filterSelectionProd('prod3')">ECommerce</button>
             <button class="btn3" onclick="filterSelectionProd('prod4')">Medical Apps</button>
@@ -302,7 +302,7 @@
           
           <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
           <div class="container1">
-            <div class="filterDivProd all-products">
+            <!-- <div class="filterDivProd all-products">
               <div class="col-md-6">
                   <img src="img/secction/allProd.jpg" height="440" width="585">
               </div>
@@ -348,8 +348,8 @@
                       </div>
                     </div>
               </div>
-            </div>
-            <div class="filterDivProd prod1">
+            </div> -->
+            <div class="filterDivProd prod1 show">
                 <div class="col-md-6">
                     <img src="img/secction/aviation.jpg" height="470" width="585">
                 </div>
@@ -457,8 +457,8 @@
   <div class="row">
     <h2 style="text-align: center; margin-top: 6%;">Services</h2>
     <section id="myBtnContainer">
-        <button class="btn1 active" onclick="filterSelection('all-service')"> All Services</button>
-        <button class="btn1" onclick="filterSelection('serv1')">Application Development</button>
+        <!-- <button class="btn1 active" onclick="filterSelection('all-service')"> All Services</button> -->
+        <button class="btn1 active" onclick="filterSelection('serv1')">Application Development</button>
         <button class="btn1" onclick="filterSelection('serv2')">Cloud Management<div></div></button>
         <button class="btn1" onclick="filterSelection('serv3')">Infrastructure Management</button>
         <button class="btn1" onclick="filterSelection('serv4')"> Testing</button>
@@ -466,7 +466,7 @@
       
       <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
       <div class="container1">
-        <div class="filterDivs all-service">
+        <!-- <div class="filterDivs all-service">
           <div class="col-md-6">
               <img src="img/secction/ser2.jpeg" height="440" width="585">
           </div>
@@ -513,30 +513,37 @@
                   </div>
                 </div>
           </div>
-        </div>
-        <div class="filterDivs serv1">
+        </div> -->
+        <div class="filterDivs serv1 show">
             <div class="col-md-6">
                 <img src="img/secction/sol1.jpg" height="440" width="585">
             </div>
             <div class="col-md-6 cb-bg" style="color:white">
             <ul>
-              <li class="list-alignHead">Application Development</li>
+              <!-- <li class="list-alignHead">Application Development </li> -->
               <ul>
-                <li class="list-align">Web Application Development </li>
+                <li class="list-align"> Mobile Application Development </li>
                 <ul>
-                  <li class="list-align1">Validate your concept</li>
-                  <li class="list-align1">Avoid unplanned costs</li>
-                  <li class="list-align1">Choose the right technology</li>
-                  <li class="list-align1">Innovate and ensure growth</li>
+                  <li class="list-align1">Native apps</li>
+                  <li class="list-align1">Hybrid apps/iOS and Android Apps</li>
+                  <!-- <li class="list-align1">Mobile web apps</li> -->
+                  <!-- <li class="list-align1">App UI design</li> -->
                 </ul>
-             <li class="list-align">Mobile Application Development</li>
+             <li class="list-align">Web Application Development </li>
               <ul >
-                  <li class="list-align1">Excellent usability</li>
-                  <li class="list-align1">Rich features</li>
-                  <li class="list-align1">Top performance</li>
-                  <li class="list-align1">Rock-solid security</li> 
-                  <li class="list-align1">Novel capabilities</li>
-                  <li class="list-align1">On any screen</li>
+                  <li class="list-align1">Static/Dynamic Web Application</li>
+                  <!-- <li class="list-align1">Portal Web Application</li> -->
+                  <li class="list-align1">Multi-Page Apps</li>
+                  <li class="list-align1">Progressive Web Apps</li> 
+                  <li class="list-align1">JavaScript-Powered Web Apps</li>
+              </ul>
+              <li class="list-align">Application Development, Maintenance & Support</li>
+              <ul >
+                  <!-- <li class="list-align1">Custom Application Development</li> -->
+                  <li class="list-align1">Software Product development</li>
+                  <li class="list-align1">Enterprise Application Development</li>
+                  <li class="list-align1">24*7 Technical support</li> 
+                  <li class="list-align1">Application and Database support</li>
               </ul>
               </ul>
             </ul>
@@ -598,13 +605,15 @@
                       <ul>
                         <li class="list-align"></li>
                         <ul style="margin-top: 3%">
-                            <li class="list-align1">Web API Testing</li>
-                            <li class="list-align1">Defect Tracking</li>
-                            <li class="list-align1">Browser Compatibility </li>
-                            <li class="list-align1">Performance Testing </li>
-                            <li class="list-align1">Test Data Preparation</li>
-                            <li class="list-align1">Requirements Management</li>
-                            <li class="list-align1">Static Analysis </li>
+                            <li class="list-align1">Functional Testing </li>
+                            <li class="list-align1">User Acceptance Testing</li>
+                            <li class="list-align1">Integration Testing </li>
+                            <li class="list-align1">System Testing </li>
+                            <li class="list-align1">Smoke Testing</li>
+                            <li class="list-align1">Interface Testing</li>
+                            <li class="list-align1">Regression Testing </li>
+                            <li class="list-align1">Browser Compatibility</li>
+                            <li class="list-align1"> Performance Testing </li>
                         </ul>
                       </ul>
                     </ul>
@@ -621,8 +630,8 @@
         <div class="container">
           <h2 style="text-align: center; margin-top: 6%;">Solutions</h2>
             <section id="myBtnContainer">
-                <button class="btn2 active" onclick="filterSelections('all-solution')"> All Solutions</button>
-                <button class="btn2" onclick="filterSelections('soln0')">ECommerce Solution</button>
+                <!-- <button class="btn2 active" onclick="filterSelections('all-solution')"> All Solutions</button> -->
+                <button class="btn2  active" onclick="filterSelections('soln0')">ECommerce Solution</button>
                 <button class="btn2" onclick="filterSelections('soln1')">ITSM Solution</button>
                 <button class="btn2" onclick="filterSelections('soln2')">Review & Rating</button>
                 <button class="btn2" onclick="filterSelections('soln3')">Clinical solution </button>
@@ -630,7 +639,7 @@
               
               <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
               <div class="container1">
-                <div class="filterDiv all-solution">
+                <!-- <div class="filterDiv all-solution">
                   <div class="col-md-6">
                       <img src="img/secction/solution.jpg" height="440" width="585">
                   </div>
@@ -678,7 +687,7 @@
                         </div>
                       </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="filterDiv soln0">
                     <div class="col-md-6">
                         <img src="img/secction/ecomsol.jpg" height="440" width="585">
@@ -799,7 +808,7 @@
          <!-- spacer section:stats -->
 
     
-    <section id="parallax1" class="section" data-stellar-background-ratio="0.5">
+    <!-- <section id="parallax1" class="section" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row appear stats">
             <div class="col-md-3">
@@ -872,7 +881,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- map -->
   <!-- <section id="section-map" class="clearfix ">
@@ -896,32 +905,32 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="cform" id="contact-form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
+            <div id="errormessage">Message sending failed.</div>
             <form action="" method="post" class="contactForm">
 
               <div class="field your-name form-group">
-                <input type="text" name="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <input type="text" name="name" id="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validation"></div>
               </div>
               <div class="field your-email form-group">
-                <input type="text" name="email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
+                <input type="text" name="email" id="email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
                 <div class="validation"></div>
               </div>
               <div class="field subject form-group">
-                <input type="text" name="subject" placeholder="Subject" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <input type="text" name="subject" id="subject" placeholder="Subject" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
                 <div class="validation"></div>
               </div>
               <div class="field  form-group">
-                <input type="text" name="phone" pattern="^(\+|(?=.*[0-9]))[- 0-9]+$"  placeholder="Contact Number" class="cform-text" size="15" data-rule="minlen:10" data-msg="Please enter at least 10 digits of contact number">
+                <input type="text" name="phone" id="number" pattern="^(\+|(?=.*[0-9]))[- 0-9]+$"  placeholder="Contact Number" class="cform-text" size="15" data-rule="minlen:10" data-msg="Please enter at least 10 digits of contact number">
                 <div class="validation"></div>
               </div>
 
               <div class="field message form-group">
-                <textarea name="message" placeholder="Write something about us" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <textarea name="message" id="message" placeholder="Write something about us" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
                 <div class="validation"></div>
               </div>
               <div class="send-btn">
-                <input type="submit" value="SEND MESSAGE" class="btn btn-theme">
+                <button type="submit" id="submit" value="SEND MESSAGE" class="btn send-button">SEND MESSAGE</button>
               </div>
 
             </form>

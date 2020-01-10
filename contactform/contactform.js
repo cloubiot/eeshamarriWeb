@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
   "use strict";
+  
 
   //Contact
   $('form.contactForm').submit(function() {
@@ -88,31 +89,54 @@ jQuery(document).ready(function($) {
         i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
-    if (ferror) return false;
-    else var str = $(this).serialize();
-    var action = $(this).attr('action');
-    if( ! action ) {
-      action = 'contactform/contactform.php';
-    }
-    $.ajax({
-      type: "POST",
-      url: action,
-      data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
+
+   var request = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            contactNumber: document.getElementById("number").value,
+            message: document.getElementById("message").value
+        }
+        if (ferror) return false;
+        else var str = request;
+        var action = $(this).attr('action');
+        if (!action) {
+            action = 'http://localhost:8080/cloubiotWAPI/UserController/contactform';
         }
 
-      }
-    });
-    return false;
+        $.ajax({
+            headers: new Headers({
+                'Content-Type': 'application/json;charset=utf-8',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+
+            }),
+            type: "POST",
+            url: action,
+            data: JSON.stringify(str),
+            dataType: "json",
+            success: function(msg) {
+              if(msg.isSuccess){
+                $('.contactForm').find("input, textarea").val("");
+                $('#sendmessage').fadeIn(100).show();
+                $('#sendmessage').delay(10000).fadeOut();
+              }
+           else{
+            $('#errormessage').fadeIn(100).show();
+            $('#errormessage').delay(10000).fadeOut();
+           }
+            window.scrollTo(0,3100)
+        
+            }
+
+            // contantType: "application/json",
+            // data: "data=" + JSON.stringify(str),
+
+
+        });
+        return false;
   });
 
 });
+
+

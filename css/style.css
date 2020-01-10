@@ -800,8 +800,9 @@ div.cform-response-output {
 	-webkit-border-radius: 4px;
 }
 
-.send-btn input {
+.send-btn{
 	margin: 0 auto 20px auto !important;
+	text-align: center;
 }
 
 
@@ -1359,5 +1360,22 @@ Filter
     display: inline-block;
 }
 
+.send-button{
+	background: #95cbdd;
+    border-radius: 0px;
+    height: 60px;
+    color: white;
+    width: 185px;
+    font-size: 14px;
+}
+.send-button:hover{
+	color: white;
+	background: #777;
+}
 
+@media (max-width: 767px) {
+	.logo-adjzt {
+		width:106px;
+	}
+}
 

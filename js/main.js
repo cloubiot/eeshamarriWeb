@@ -201,7 +201,7 @@ $(window).load(function(){
 
 //....Fiter section for solution../////
 
-filterSelections("all-solution")
+filterSelections("soln0")
 function filterSelections(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
@@ -349,7 +349,7 @@ $(function() {                       //run when the DOM is ready
   
 
 
-filterSelection("all-service")
+filterSelection("serv1")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDivs");
@@ -466,7 +466,7 @@ function service4(){
   document.getElementById("demo6").setAttribute("aria-expanded", z);
   }
 
-  filterSelectionProd("all-products")
+  filterSelectionProd("prod1")
 function filterSelectionProd(c) {
   var x, i;
   x = document.getElementsByClassName("filterDivProd");
@@ -582,8 +582,5 @@ function product4(){
   document.getElementById("demo9").setAttribute("aria-expanded", y);
   document.getElementById("demo10").setAttribute("aria-expanded", z);
   }
-
-
-
-
+  
   
