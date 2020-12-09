@@ -202,28 +202,37 @@ $(window).load(function(){
 //....Fiter section for solution../////
 
 filterSelections("soln0")
-function filterSelections(c) {
+function filterSelections(c,d) {
+  if(d=="true"){
+   $("#demo5").removeClass('collapse in').toggleClass('collapse');
+   $("#image5").toggleClass('flip');
+  //  alert("true")
+  }
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show",c);
   }
 }
 
 // Show filtered elements
-function w3AddClass(element, name) {
+function w3AddClass(element, name,event) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     if (arr1.indexOf(arr2[i]) == -1) {
       element.className += " " + arr2[i];
+      // activeBtn(element.className,event);
     }
   }
 }
-
+function activeBtn(className,event){
+  className = className.match(event)
+  // alert(className)
+}
 // Hide elements that are not selected
 function w3RemoveClass(element, name) {
   var i, arr1, arr2;
@@ -243,6 +252,11 @@ $(function() {                       //run when the DOM is ready
     });
   });
 
+  $(function() {                       //run when the DOM is ready
+    $(".ref-select").click(function() {  //use a class, since your ID gets mangled
+        $(this).addClass('active').siblings().removeClass('active');     //add the class to the clicked element
+    });
+  });
   
   
   //....... arrow toggle .......///
@@ -350,13 +364,20 @@ $(function() {                       //run when the DOM is ready
 
 
 filterSelection("serv1")
-function filterSelection(c) {
+function filterSelection(c,d) {
+  if(d=="false"){
+    $("#demo4").removeClass('collapse in').toggleClass('collapse');
+    $("#image4").toggleClass('flip');
+    // alert("false")
+   }
   var x, i;
   x = document.getElementsByClassName("filterDivs");
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1){ 
+      w3AddClass(x[i], "show",c)
+    };
   }
 }
 
@@ -370,7 +391,7 @@ function service1(){
   $("#image4").toggleClass('flip');
   var x = document.getElementById("demo5").getAttribute("aria-expanded"); 
   var y = document.getElementById("demo6").getAttribute("aria-expanded"); 
-  var z = document.getElementById("demo7").getAttribute("aria-expanded"); 
+  // var z = document.getElementById("demo7").getAttribute("aria-expanded"); 
   if(x == "true"){  
      x = "false"
      $("#image5").toggleClass('flip');
@@ -381,21 +402,21 @@ function service1(){
     $("#image6").toggleClass('flip');
     $("#demo6").removeClass('collapse in').toggleClass('collapse');
   }
-  if(z == "true"){
-    z = "false"
-    $("#image7").toggleClass('flip');
-    $("#demo7").removeClass('collapse in').toggleClass('collapse');
-  }
+  // if(z == "true"){
+  //   z = "false"
+  //   $("#image7").toggleClass('flip');
+  //   $("#demo7").removeClass('collapse in').toggleClass('collapse');
+  // }
 document.getElementById("demo5").setAttribute("aria-expanded", x);
 document.getElementById("demo6").setAttribute("aria-expanded", y);
-document.getElementById("demo7").setAttribute("aria-expanded", z);
+// document.getElementById("demo7").setAttribute("aria-expanded", z);
 
 }
 function service2(){
 $("#image5").toggleClass('flip');
 var x = document.getElementById("demo4").getAttribute("aria-expanded"); 
 var y = document.getElementById("demo6").getAttribute("aria-expanded"); 
-var z = document.getElementById("demo7").getAttribute("aria-expanded"); 
+// var z = document.getElementById("demo7").getAttribute("aria-expanded"); 
   if(x == "true"){  
      x = "false"
      $("#image4").toggleClass('flip');
@@ -406,21 +427,21 @@ var z = document.getElementById("demo7").getAttribute("aria-expanded");
     $("#image6").toggleClass('flip');
     $("#demo6").removeClass('collapse in').toggleClass('collapse');
   }
-  if(z == "true"){
-    z = "false"
-    $("#image7").toggleClass('flip');
-    $("#demo7").removeClass('collapse in').toggleClass('collapse');
-  }
+  // if(z == "true"){
+  //   z = "false"
+  //   $("#image7").toggleClass('flip');
+  //   $("#demo7").removeClass('collapse in').toggleClass('collapse');
+  // }
 document.getElementById("demo4").setAttribute("aria-expanded", x);
 document.getElementById("demo6").setAttribute("aria-expanded", y);
-document.getElementById("demo7").setAttribute("aria-expanded", z);
+// document.getElementById("demo7").setAttribute("aria-expanded", z);
 }
 
 function service3(){
 $("#image6").toggleClass('flip');
 var x = document.getElementById("demo4").getAttribute("aria-expanded"); 
 var y = document.getElementById("demo5").getAttribute("aria-expanded"); 
-var z = document.getElementById("demo7").getAttribute("aria-expanded"); 
+// var z = document.getElementById("demo7").getAttribute("aria-expanded"); 
   if(x == "true"){  
      x = "false"
      $("#image4").toggleClass('flip');
@@ -431,49 +452,54 @@ var z = document.getElementById("demo7").getAttribute("aria-expanded");
     $("#image5").toggleClass('flip');
     $("#demo5").removeClass('collapse in').toggleClass('collapse');
   }
-  if(z == "true"){
-    z = "false"
-    $("#image7").toggleClass('flip');
-    $("#demo7").removeClass('collapse in').toggleClass('collapse');
-  }
+  // if(z == "true"){
+  //   z = "false"
+  //   $("#image7").toggleClass('flip');
+  //   $("#demo7").removeClass('collapse in').toggleClass('collapse');
+  // }
 document.getElementById("demo4").setAttribute("aria-expanded", x);
 document.getElementById("demo5").setAttribute("aria-expanded", y);
-document.getElementById("demo7").setAttribute("aria-expanded", z);
+// document.getElementById("demo7").setAttribute("aria-expanded", z);
 }
 
-function service4(){
-  $("#image7").toggleClass('flip');
-  var x = document.getElementById("demo4").getAttribute("aria-expanded"); 
-  var y = document.getElementById("demo5").getAttribute("aria-expanded"); 
-  var z = document.getElementById("demo6").getAttribute("aria-expanded"); 
-    if(x == "true"){  
-       x = "false"
-       $("#image4").toggleClass('flip');
-       $("#demo4").removeClass('collapse in').toggleClass('collapse');
-    }
-    if(y == "true"){
-      y = "false"
-      $("#image5").toggleClass('flip');
-      $("#demo5").removeClass('collapse in').toggleClass('collapse');
-    }
-    if(z == "true"){
-      z = "false"
-      $("#image6").toggleClass('flip');
-      $("#demo6").removeClass('collapse in').toggleClass('collapse');
-    }
-  document.getElementById("demo4").setAttribute("aria-expanded", x);
-  document.getElementById("demo5").setAttribute("aria-expanded", y);
-  document.getElementById("demo6").setAttribute("aria-expanded", z);
-  }
+// function service4(){
+//   $("#image7").toggleClass('flip');
+//   var x = document.getElementById("demo4").getAttribute("aria-expanded"); 
+//   var y = document.getElementById("demo5").getAttribute("aria-expanded"); 
+//   var z = document.getElementById("demo6").getAttribute("aria-expanded"); 
+//     if(x == "true"){  
+//        x = "false"
+//        $("#image4").toggleClass('flip');
+//        $("#demo4").removeClass('collapse in').toggleClass('collapse');
+//     }
+//     if(y == "true"){
+//       y = "false"
+//       $("#image5").toggleClass('flip');
+//       $("#demo5").removeClass('collapse in').toggleClass('collapse');
+//     }
+//     if(z == "true"){
+//       z = "false"
+//       $("#image6").toggleClass('flip');
+//       $("#demo6").removeClass('collapse in').toggleClass('collapse');
+//     }
+//   document.getElementById("demo4").setAttribute("aria-expanded", x);
+//   document.getElementById("demo5").setAttribute("aria-expanded", y);
+//   document.getElementById("demo6").setAttribute("aria-expanded", z);
+//   }
 
-  filterSelectionProd("prod1")
-function filterSelectionProd(c) {
+  filterSelectionProd("prod2")
+function filterSelectionProd(c,d) {
+  if(d=="pass"){
+   $("#demo6").removeClass('collapse in').toggleClass('collapse');
+   $("#image6").toggleClass('flip');
+  //  alert("pass")
+  }
   var x, i;
   x = document.getElementsByClassName("filterDivProd");
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show",c);
   }
 }
 

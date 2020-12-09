@@ -14,7 +14,7 @@ a:hover {
 
 .navbar .navbar-nav > .active > a {
 	color: #95cbdd;
-	border-bottom: 4px solid #85b0be;
+	/* border-bottom: 4px solid #85b0be; */
 }
 
 /* flexslider */

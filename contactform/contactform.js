@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
             $('#errormessage').fadeIn(100).show();
             $('#errormessage').delay(10000).fadeOut();
            }
-            window.scrollTo(0,3100)
+            window.scrollTo(0,2700);
         
             }
 

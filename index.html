@@ -5,7 +5,6 @@
   <!-- BASICS -->
   <title>Cloubiot</title>
   <meta charset="utf-8">
-  <title>CLOUBIOT</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="js/rs-plugin/css/settings.css" media="screen">
@@ -29,25 +28,25 @@
 
 <body>
   <section id="header" class="appear"></section>
-  <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
+  <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);"
+    data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      	  <span class="fa fa-bars color-white"></span>
+          <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="#header" >
-            <img data-0="width:155px;" class="logo-adjzt" data-300=" width:120px;" src="img/logo6.png" alt="Cloubiot">
-            <!-- <div data-0="width:155px;" data-300=" width:120px;"><span>Cloubiot</span> <span>Solutions</span> </div> -->
+          <a href="#header">  
+            <img id="menu-hide" data-0="width:155px;" class="logo-adjzt" data-300=" width:120px;" src="img/logo-h.png" alt="Cloubiot" />
+            <div id="menu-show1"><h3 class="head-show">Cloubiot  Solutions</h3> </div>
           </a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-          <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#section-product">Products</a></li>
-            <li><a href="#section-service">Services</a>
-                <!-- <div class="dropdown dd-style">
+        <ul id="menu-hide" class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+          <li class="ref-select active"><a href="#header">Home</a></li>
+          <li class="ref-select"><a href="#section-service">Services</a>
+            <!-- <div class="dropdown dd-style">
                   <span class="dropbtn">Services</span>
                  <div class="dropdown-content">
                   <a class="border" href="#section-services">Application Development</a>
@@ -56,21 +55,72 @@
                   <a href="#">Testing</a>
                  </div>
                 </div> -->
-              </li>
-          <li><a href="#section-solution">Solutions</a></li>
+          </li>
+          <li class="ref-select"><a href="#section-solution">Solutions</a>
+          </li>
+          <li class="ref-select"><a href="#section-product">Products</a></li>
+          <li class="ref-select"><a href="#section-about">About Us</a></li>
+          <li class="ref-select"><a href="#section-contact">Contact</a></li>
+
+        </ul>
+      </div>
+      <div id="menu-top" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+          <!-- <li class="active"><a href="#header">Home</a></li> -->
+          <div type="button" class="opt-align" onclick="service1()" data-toggle="collapse" data-target="#demo4">Services
+            <span>
+              <img class="toggle arrow" id="image4" src="img/secction/angle-right.png">
+            </span>
+          </div>
+          <div id="demo4" class="collapse">
+            <li type="button" class="list-click" onclick="filterSelection('serv1','false')"><a class="opt-click" href="#section-service">Application
+                Development</a></li>
+            <li type="button" class="list-click" onclick="filterSelection('serv2','false')"><a class="opt-click" href="#section-service">Cloud
+                Management</a></li>
+            <li type="button" class="list-click" onclick="filterSelection('serv3','false')"><a class="opt-click" href="#section-service">Devops Support</a></li>
+            <li type="button" class="list-click" onclick="filterSelection('serv4','false')"><a class="opt-click" href="#section-service">Testing</a></li>
+          </div>
+
+          <div type="button" class="opt-align" onclick="service2()" data-toggle="collapse" data-target="#demo5">Solutions
+            <span>
+              <img class="toggle arrow" id="image5" src="img/secction/angle-right.png">
+            </span>
+          </div>
+          <div id="demo5" class="collapse">
+            <li type="button" class="list-click" onclick="filterSelections('soln0','true')"><a class="opt-click" href="#section-solution">ECommerce
+                Solution</a></li>
+            <li type="button" class="list-click" onclick="filterSelections('soln1','true')"><a class="opt-click" href="#section-solution">ITSM
+                Solution</a></li>
+            <!-- <li type="button" class="list-click" onclick="filterSelections('soln2','true')"><a class="opt-click" href="#section-solution">Review Platform</a></li> -->
+            <li type="button" class="list-click" onclick="filterSelections('soln3','true')"><a class="opt-click" href="#section-solution">Health Care</a></li>
+          </div>
+          <div type="button" class="opt-align" onclick="service3()" data-toggle="collapse" data-target="#demo6">Products
+            <span>
+              <img class="toggle arrow" id="image6" src="img/secction/angle-right.png">
+            </span>
+          </div>
+          <div id="demo6" class="collapse">
+            <!-- <li type="button" class="list-click" onclick="filterSelectionProd('prod1','pass')"><a class="opt-click" href="#section-product">AviationRating</a></li> -->
+            <li type="button" class="list-click" onclick="filterSelectionProd('prod2','pass')"><a class="opt-click" href="#section-product">Ticketing
+                Tool</a></li>
+            <li type="button" class="list-click" onclick="filterSelectionProd('prod3','pass')"><a class="opt-click" href="#section-product">ECommerce</a></li>
+            <li type="button" class="list-click" onclick="filterSelectionProd('prod4','pass')"><a class="opt-click" href="#section-product">Medical
+                Apps</a></li>
+          </div>
           <li><a href="#section-about">About Us</a></li>
           <li><a href="#section-contact">Contact</a></li>
-         
         </ul>
       </div>
       <!--/.navbar-collapse -->
     </div>
   </div>
 
+
+
   <section id="intro">
     <div class="intro-content">
-      <h2>CLOUBIOT SOLUTIONS</h2>
-      <h3>TAG LINE</h3>
+      <!-- <h2>CLOUBIOT SOLUTIONS</h2> -->
+      <!-- <h3>TAG LINE</h3> -->
       <!-- <div>
         <a href="#section-services" class="btn-get-started scrollto">Get Started</a>
       </div> -->
@@ -78,7 +128,7 @@
   </section>
 
   <!-- services -->
-  <section id="section-services" class="section pad-bot30 bg-white">
+  <!-- <section id="section-services" class="section pad-bot30 bg-white">
     <div class="container">
 
       <div class="row mar-bot40">
@@ -88,10 +138,10 @@
               <a href="#section-product" class="hi-icon hi-icon-contract navbar scrollto">screen</a>
             </div>
           </div>
-          <h3 class="text-bold"><a class="top-section navbar scrollto" href="#section-product">PRODUCTS</a></h3>
-          <!-- <p>Product Description</p> -->
+          <h3 class="text-bold"><a class="top-section navbar scrollto" href="#section-product">PRODUCTS</a></h3> -->
+  <!-- <p>Product Description</p> -->
 
-          <div class="clear"></div>
+  <!-- <div class="clear"></div>
         </div>
         <div class="col-lg-4">
           <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
@@ -99,10 +149,10 @@
               <a href="#section-service" class="hi-icon hi-icon-screen  navbar scrollto">screen</a>
             </div>
           </div>
-          <h3 class="text-bold"><a class="top-section navbar scrollto" href="#section-service">SERVICES</a></h3>
-          <!-- <p>Service Deccription</p> -->
+          <h3 class="text-bold"><a class="top-section navbar scrollto" href="#section-service">SERVICES</a></h3> -->
+  <!-- <p>Service Deccription</p> -->
 
-          <div class="clear"></div>
+  <!-- <div class="clear"></div>
         </div>
 
         <div class="col-lg-4">
@@ -111,14 +161,14 @@
               <a href="#section-solution" class="hi-icon hi-icon-pencil  navbar scrollto">pencil</a>
             </div>
           </div>
-          <h3 class="text-bold"><a class="top-section navbar scrollto" href="#section-solution">SOLUTIONS</a></h3>
-          <!-- <p>Solution Description</p> -->
+          <h3 class="text-bold"><a class="top-section navbar scrollto" href="#section-solution">SOLUTIONS</a></h3> -->
+  <!-- <p>Solution Description</p> -->
 
-          <div class="clear"></div>
-        </div>
+  <!-- <div class="clear"></div> -->
+  </div>
 
-      </div>
-      <!-- <div class="row">
+  </div>
+  <!-- <div class="row">
         <div class="col-lg-4">
           <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
             <div class="float-left mar-right20">
@@ -156,7 +206,7 @@
         </div>
 
       </div> -->
-    </div>
+  </div>
   </section>
 
   <!-- spacer section:testimonial -->
@@ -215,11 +265,11 @@
       </div>
     </div>
   </section> -->
-    
-  
+
+
   <!-- client review -->
 
-      <!-- <div class="row align-center mar-bot40">
+  <!-- <div class="row align-center mar-bot40">
         <div class="col-md-3">
           <div class="team-member">
             <figure class="member-photo"><img src="img/team/member1.jpg" alt=""></figure>
@@ -258,11 +308,11 @@
         </div>
       </div> -->
 
-    </div>
+  </div>
   </section>
   <!-- /about -->
 
- 
+
 
   <!-- section works -->
   <!-- <section id="section-works" class="section appear clearfix">
@@ -286,187 +336,23 @@
       </div>
     </section> -->
 
-   <!-- products -->
 
-   <section id="section-product">
-      <div class="container">
+  <!-- services -->
+  <section id="section-service">
+    <div class="container con-res">
       <div class="row">
-        <h2 style="text-align: center; margin-top: 6%;">Products</h2>
-        <section id="myBtnContainer">
-            <!-- <button class="btn3 active" onclick="filterSelectionProd('all-products')"> All Products</button> -->
-            <button class="btn3 active" onclick="filterSelectionProd('prod1')">AviationRating</button>
-            <button class="btn3" onclick="filterSelectionProd('prod2')">Ticketing Tool<div></div></button>
-            <button class="btn3" onclick="filterSelectionProd('prod3')">ECommerce</button>
-            <button class="btn3" onclick="filterSelectionProd('prod4')">Medical Apps</button>
+        <h2 id="res-top">Services</h2>
+        <section id="myBtnContainer" class="myBtnContainers">
+          <!-- <button class="btn1 active" onclick="filterSelection('all-service')"> All Services</button> -->
+          <button class="btn1 active" onclick="filterSelection('serv1')">Application Development</button>
+          <button class="btn1" onclick="filterSelection('serv2')">Cloud Management<div></div></button>
+          <button class="btn1" onclick="filterSelection('serv3')">Devops Support</button>
+          <button class="btn1" onclick="filterSelection('serv4')"> Testing</button>
         </section>
-          
-          <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-          <div class="container1">
-            <!-- <div class="filterDivProd all-products">
-              <div class="col-md-6">
-                  <img src="img/secction/allProd.jpg" height="440" width="585">
-              </div>
-              <div class="col-md-6 btn-align cb-bg">
-                <div style="margin-top: 5%;">
-                  <div type="button" class="btn btn-primary btnSize" onclick="product1()" data-toggle="collapse" data-target="#demo8">
-                      <span>AviationRating
-                          <img class="toggle arrow" id="image8"src="img/secction/angle-right.png">
-                        </span>  
-                    </div>
-                  <div id="demo8" class="collapse content-bg">
-                      Understanding client requirements and how they translate to new application features.
-                  </div>
-                </div>
-                <div>
-                  <div type="button" class="btn btn-primary btnSize" onclick="product2()" data-toggle="collapse" data-target="#demo9">
-                    <span>Ticketing Tool
-                    <img class="toggle arrow" id="image9"src="img/secction/angle-right.png">
-                  </span>
-                </div>
-                  <div id="demo9" class="collapse content-bg">
-                      For cloud-based services and technical support to automate and enhance your business operations.
-                  </div>
-                </div>
-                <div>
-                    <div type="button" class="btn btn-primary btnSize" onclick="product3()" data-toggle="collapse" data-target="#demo10">
-                      <span>ECommerce
-                      <img class="toggle arrow" id="image10"src="img/secction/angle-right.png">
-                    </span>
-                  </div>
-                    <div id="demo10" class="collapse content-bg">
-                        Responsive, flexible and proven infrastructure services and solutions that deliver differentiated value to our customer's business.
-                    </div>
-                  </div>
-                  <div>
-                      <div type="button" class="btn btn-primary btnSize" onclick="product4()" data-toggle="collapse" data-target="#demo11">
-                        <span> Medical Apps
-                        <img class="toggle arrow" id="image11"src="img/secction/angle-right.png">
-                      </span>
-                    </div>
-                      <div id="demo11" class="collapse content-bg">
-                          Tedious tasks, and minimizes the number of errors, with the right automation tools it is possible to automate browser tasks, web testing, and online data extraction
-                      </div>
-                    </div>
-              </div>
-            </div> -->
-            <div class="filterDivProd prod1 show">
-                <div class="col-md-6">
-                    <img src="img/secction/aviation.jpg" height="470" width="585">
-                </div>
-                <div class="col-md-6 cb-bg" style="color:white">
-                <ul>
-                  <li class="list-alignHead">AviationRating</li>
-                  <ul style="margin-top: 3%">
-                    <li class="list-align">Web Application Development </li>
-                    <ul style="margin-top: 3%">
-                      <li class="list-align1">Validate your concept</li>
-                      <li class="list-align1">Avoid unplanned costs</li>
-                      <li class="list-align1">Choose the right technology</li>
-                      <li class="list-align1">Innovate and ensure growth</li>
-                    </ul>
-                 <li class="list-align">Mobile Application Development</li>
-                  <ul>
-                      <li class="list-align1">Excellent usability</li>
-                      <li class="list-align1">Rich features</li>
-                      <li class="list-align1">Top performance</li>
-                      <li class="list-align1">Rock-solid security</li> 
-                      <li class="list-align1">Novel capabilities</li>
-                      <li class="list-align1">On any screen</li>
-                  </ul>
-                  </ul>
-                </ul>
-                </div>
-              </div> 
-            <div class="filterDivProd prod2">
-                <div class="col-md-6">
-                    <img src="img/secction/ticket.png" height="440" width="585">
-                </div>
-                <div class="col-md-6 cb-bg" style="color:white">
-                    <ul style="margin-top: 2%;">
-                        <li class="list-alignHead">Ticketing Tool</li>
-                        <ul >
-                           
-                        <ul style="margin-top: 3%">
-                            <li class="list-align1">Service‑level Management (SLA)</li>
-                            <li class="list-align1">Continuity Backup & Failover</li>
-                            <li class="list-align1">High Availability Considerations</li>
-                            <li class="list-align1">Disaster recovery</li>
-                        </ul>
-                      
-                          <li class="list-align">Cloud Migration Services</li>
-                          <ul style="margin-top: 3%">
-                              <li class="list-align1">Cloud-to-cloud movement</li>
-                              <li class="list-align1">Migration of workloads</li>
-                              <li class="list-align1">Validation and performance testing</li>
-                            </ul>
-                      </ul>
-                    </ul>
-                </div>
-              </div>
-            <div class="filterDivProd prod3">
-                <div class="col-md-6">
-                   <img src="img/secction/ecommerce.jpg" height="440" width="585">
-                </div>
-                <div class="col-md-6 cb-bg" style="color:white">
-                    <ul>
-                        <li class="list-alignHead">ECommerce</li>
-                        <ul>
-                          <li class="list-align"></li> 
-                          <ul style="margin-top: 3%">
-                              <li class="list-align1">Maintain security</li>
-                              <li class="list-align1"> Data integrity</li>
-                              <li class="list-align1">Network Availability</li>
-                              <li class="list-align1"> Performance and storage needs seamlessly with scalable public</li>
-                              <li class="list-align1">Private and hybrid cloud solutions</li>
-                            </ul>
-                        </ul>
-                      </ul>
-                </div>
-              </div>
-              <div class="filterDivProd prod4">
-                  <div class="col-md-6">
-                      <img src="img/secction/medical.jpg" height="440" width="585">
-                  </div>
-                  <div class="col-md-6 cb-bg" style="color:white">
-                      <ul>
-                          <li class="list-alignHead">Medical Apps</li>
-                          <ul>
-                            <li class="list-align"></li>
-                            <ul style="margin-top: 3%">
-                                <li class="list-align1">Web API Testing</li>
-                                <li class="list-align1">Defect Tracking</li>
-                                <li class="list-align1">Browser Compatibility </li>
-                                <li class="list-align1">Performance Testing </li>
-                                <li class="list-align1">Test Data Preparation</li>
-                                <li class="list-align1">Requirements Management</li>
-                                <li class="list-align1">Static Analysis </li>
-                            </ul>
-                          </ul>
-                        </ul>
-                  </div>
-                </div>
-            </div>
-      </div>
-    </div>
-    </section>
-    <!-- products -->
 
-<!-- services -->
-<section id="section-service" >
-  <div class="container">
-  <div class="row">
-    <h2 style="text-align: center; margin-top: 6%;">Services</h2>
-    <section id="myBtnContainer">
-        <!-- <button class="btn1 active" onclick="filterSelection('all-service')"> All Services</button> -->
-        <button class="btn1 active" onclick="filterSelection('serv1')">Application Development</button>
-        <button class="btn1" onclick="filterSelection('serv2')">Cloud Management<div></div></button>
-        <button class="btn1" onclick="filterSelection('serv3')">Infrastructure Management</button>
-        <button class="btn1" onclick="filterSelection('serv4')"> Testing</button>
-    </section>
-      
-      <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-      <div class="container1">
-        <!-- <div class="filterDivs all-service">
+        <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+        <div class="container1">
+          <!-- <div class="filterDivs all-service">
           <div class="col-md-6">
               <img src="img/secction/ser2.jpeg" height="440" width="585">
           </div>
@@ -514,264 +400,445 @@
                 </div>
           </div>
         </div> -->
-        <div class="filterDivs serv1 show">
-            <div class="col-md-6">
-                <img src="img/secction/sol1.jpg" height="440" width="585">
+          <div class="filterDivs serv1 show">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/appdev1.jpg" height="440" width="585">
             </div>
             <div class="col-md-6 cb-bg" style="color:white">
-            <ul>
-              <!-- <li class="list-alignHead">Application Development </li> -->
-              <ul>
-                <li class="list-align"> Mobile Application Development </li>
-                <ul>
-                  <li class="list-align1">Native apps</li>
-                  <li class="list-align1">Hybrid apps/iOS and Android Apps</li>
-                  <!-- <li class="list-align1">Mobile web apps</li> -->
-                  <!-- <li class="list-align1">App UI design</li> -->
-                </ul>
-             <li class="list-align">Web Application Development </li>
-              <ul >
-                  <li class="list-align1">Static/Dynamic Web Application</li>
-                  <!-- <li class="list-align1">Portal Web Application</li> -->
-                  <li class="list-align1">Multi-Page Apps</li>
-                  <li class="list-align1">Progressive Web Apps</li> 
-                  <li class="list-align1">JavaScript-Powered Web Apps</li>
-              </ul>
-              <li class="list-align">Application Development, Maintenance & Support</li>
-              <ul >
-                  <!-- <li class="list-align1">Custom Application Development</li> -->
-                  <li class="list-align1">Software Product development</li>
-                  <li class="list-align1">Enterprise Application Development</li>
-                  <li class="list-align1">24*7 Technical support</li> 
-                  <li class="list-align1">Application and Database support</li>
-              </ul>
-              </ul>
-            </ul>
-            </div>
-          </div> 
-        <div class="filterDivs serv2">
-            <div class="col-md-6">
-                <img src="img/secction/ser1.jpeg" height="440" width="585">
-            </div>
-            <div class="col-md-6 cb-bg" style="color:white">
-                <ul style="margin-top: 2%;">
-                    <li class="list-alignHead">Cloud Management Services</li>
-                    <ul >
-                       
-                    <ul style="margin-top: 3%">
-                        <li class="list-align1">Service‑level Management (SLA)</li>
-                        <li class="list-align1">Continuity Backup & Failover</li>
-                        <li class="list-align1">High Availability Considerations</li>
-                        <li class="list-align1">Disaster recovery</li>
-                    </ul>
-                  
-                      <li class="list-align">Cloud Migration Services</li>
-                      <ul style="margin-top: 3%">
-                          <li class="list-align1">Cloud-to-cloud movement</li>
-                          <li class="list-align1">Migration of workloads</li>
-                          <li class="list-align1">Validation and performance testing</li>
-                        </ul>
+              <ul class="content-align">
+                <!-- <li class="list-alignHead">Application Development </li> -->
+                <ul style="padding-top: 15px;">
+                  <li class="list-align"> Mobile Application Development </li>
+                  <ul>
+                    <li class="list-align1">Native apps</li>
+                    <li class="list-align1">Hybrid apps/iOS and Android Apps</li>
+                    <!-- <li class="list-align1">Mobile web apps</li> -->
+                    <!-- <li class="list-align1">App UI design</li> -->
+                  </ul>
+                  <li class="list-align">Web Application Development </li>
+                  <ul>
+                    <li class="list-align1">Static/Dynamic Web Application</li>
+                    <!-- <li class="list-align1">Portal Web Application</li> -->
+                    <li class="list-align1">Multi-Page Apps</li>
+                    <li class="list-align1">Progressive Web Apps</li>
+                    <li class="list-align1">JavaScript-Powered Web Apps</li>
+                  </ul>
+                  <li class="list-align">Application Development, Maintenance & Support</li>
+                  <ul>
+                    <!-- <li class="list-align1">Custom Application Development</li> -->
+                    <li class="list-align1">Software Product development</li>
+                    <li class="list-align1">Enterprise Application Development</li>
+                    <li class="list-align1">24*7 Technical support</li>
+                    <li class="list-align1">Application and Database support</li>
                   </ul>
                 </ul>
+              </ul>
             </div>
           </div>
-        <div class="filterDivs serv3">
-            <div class="col-md-6">
-               <img src="img/secction/ser3.jpeg" height="440" width="585">
+          <div class="filterDivs serv2">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/cloud4.jfif" height="440" width="585">
             </div>
             <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align" style="margin-top: 2%;">
+                <li class="list-alignHead">Cloud Management Services</li>
                 <ul>
-                    <li class="list-alignHead">Infrastructure</li>
-                    <ul>
-                      <li class="list-align"></li> 
-                      <ul style="margin-top: 3%">
-                          <li class="list-align1">Maintain security</li>
-                          <li class="list-align1"> Data integrity</li>
-                          <li class="list-align1">Network Availability</li>
-                          <li class="list-align1"> Performance and storage needs seamlessly with scalable public</li>
-                          <li class="list-align1">Private and hybrid cloud solutions</li>
-                        </ul>
-                    </ul>
+
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">Legacy to Cloud Migration</li>
+                    <li class="list-align1">Cloud Infrastructure Management</li>
+                    <li class="list-align1">High Availability Considerations</li>
+                    <li class="list-align1">Disaster recovery</li>
+                    <li class="list-align1">Cloud Application Architecture</li>
+                    <li class="list-align1">Cloud Design</li>
+                    <li class="list-align1">Cloud Security</li>
+                    <li class="list-align1">Cloud Automation</li>
+                    <li class="list-align1">Cost Benefit Analysis</li>
+                    <li class="list-align1">Monitoring, Maintenance & Support</li>
                   </ul>
+<!-- 
+                  <li class="list-align">Cloud Migration Services</li>
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">Cloud-to-cloud movement</li>
+                    <li class="list-align1">Migration of workloads</li>
+                    <li class="list-align1">Validation and performance testing</li>
+                  </ul> -->
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="filterDivs serv3">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/devops1.jpg" height="440" width="585">
+            </div>
+            <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align">
+                <li class="list-alignHead">Devops Support</li>
+                <ul>
+                  <li class="list-align"></li>
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">Application Support</li>
+                    <li class="list-align1">DataBase Support</li>
+                    <li class="list-align1">Status Updation</li>
+                    <li class="list-align1">24x7 Support Services</li>
+                    <li class="list-align1">Application Monitoring</li>
+                    <li class="list-align1">Infrastructure Monitoring</li>
+                    <li class="list-align1">Reporting</li>
+                    <li class="list-align1">Infrastructure Maintenance</li>
+                    <li class="list-align1">Software version Maintenance</li>
+                    <li class="list-align1">Software Upgradation</li>
+                    <li class="list-align1">Software Migration</li>
+                  </ul>
+                </ul>
+              </ul>
             </div>
           </div>
           <div class="filterDivs serv4">
-              <div class="col-md-6">
-                  <img src="img/secction/auto.jpg" height="440" width="585">
-              </div>
-              <div class="col-md-6 cb-bg" style="color:white">
-                  <ul>
-                      <li class="list-alignHead">Testing</li>
-                      <ul>
-                        <li class="list-align"></li>
-                        <ul style="margin-top: 3%">
-                            <li class="list-align1">Functional Testing </li>
-                            <li class="list-align1">User Acceptance Testing</li>
-                            <li class="list-align1">Integration Testing </li>
-                            <li class="list-align1">System Testing </li>
-                            <li class="list-align1">Smoke Testing</li>
-                            <li class="list-align1">Interface Testing</li>
-                            <li class="list-align1">Regression Testing </li>
-                            <li class="list-align1">Browser Compatibility</li>
-                            <li class="list-align1"> Performance Testing </li>
-                        </ul>
-                      </ul>
-                    </ul>
-              </div>
+            <div class="col-md-6 img-align">
+              <img src="img/secction/auto.jpg" height="440" width="585">
             </div>
+            <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align">
+                <li class="list-alignHead">Testing</li>
+                <ul>
+                  <li class="list-align"></li>
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">Functional Testing </li>
+                    <li class="list-align1">User Acceptance Testing</li>
+                    <li class="list-align1">Integration Testing </li>
+                    <li class="list-align1">System Testing </li>
+                    <li class="list-align1">Smoke Testing</li>
+                    <li class="list-align1">Interface Testing</li>
+                    <li class="list-align1">Regression Testing </li>
+                    <li class="list-align1">Browser Compatibility</li>
+                    <li class="list-align1"> Performance Testing </li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+          </div>
         </div>
-  </div>
-</div>
-</section>
-<!-- services -->
+      </div>
+    </div>
+  </section>
+  <!-- services -->
 
-    <!-- solution -->
-    <section id="section-solution">
-        <div class="container">
-          <h2 style="text-align: center; margin-top: 6%;">Solutions</h2>
-            <section id="myBtnContainer">
-                <!-- <button class="btn2 active" onclick="filterSelections('all-solution')"> All Solutions</button> -->
-                <button class="btn2  active" onclick="filterSelections('soln0')">ECommerce Solution</button>
-                <button class="btn2" onclick="filterSelections('soln1')">ITSM Solution</button>
-                <button class="btn2" onclick="filterSelections('soln2')">Review & Rating</button>
-                <button class="btn2" onclick="filterSelections('soln3')">Clinical solution </button>
-            </section>
-              
-              <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-              <div class="container1">
-                <!-- <div class="filterDiv all-solution">
-                  <div class="col-md-6">
-                      <img src="img/secction/solution.jpg" height="440" width="585">
-                  </div>
-                  <div class="col-md-6 btn-align cb-bg">
-                    <div style="margin-top: 5%;">
-                      <div type="button" class="btn btn-primary btnSize" onclick="solution0()" data-toggle="collapse" data-target="#demo0">
-                          <span>ECommerce Solution
-                              <img class="toggle arrow" id="image0"src="img/secction/angle-right.png">
-                            </span>  
-                        </div>
-                      <div id="demo0" class="collapse content-bg">
-                        full-fledged E-business, and that means providing a Web site that helps 
-                        them build relationships with customers-be it in a business-to-business, business-to-consumer, or online marketplace
+  <!-- solution -->
+  <section id="section-solution">
+    <div class="container con-res">
+      <h2 style="text-align: center; margin-top: 6%;">Solutions</h2>
+      <section id="myBtnContainer" class="myBtnContainers">
+        <!-- <button class="btn2 active" onclick="filterSelections('all-solution')"> All Solutions</button> -->
+        <button class="btn2  active" onclick="filterSelections('soln0')">ECommerce Solution</button>
+        <button class="btn2" onclick="filterSelections('soln1')">ITSM Solution</button>
+        <!-- <button class="btn2" onclick="filterSelections('soln2')">Review Platform</button> -->
+        <button class="btn2" onclick="filterSelections('soln3')">Health Care </button>
+      </section>
+
+      <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+      <div class="container1">
+        <!-- <div class="filterDiv all-solution">
+                <div class="col-md-6">
+                    <img src="img/secction/solution.jpg" height="440" width="585">
+                </div>
+                <div class="col-md-6 btn-align cb-bg">
+                  <div style="margin-top: 5%;">
+                    <div type="button" class="btn btn-primary btnSize" onclick="solution0()" data-toggle="collapse" data-target="#demo0">
+                        <span>ECommerce Solution
+                            <img class="toggle arrow" id="image0"src="img/secction/angle-right.png">
+                          </span>  
                       </div>
+                    <div id="demo0" class="collapse content-bg">
+                      full-fledged E-business, and that means providing a Web site that helps 
+                      them build relationships with customers-be it in a business-to-business, business-to-consumer, or online marketplace
                     </div>
-                    <div>
-                      <div type="button" class="btn btn-primary btnSize" onclick="solution1()" data-toggle="collapse" data-target="#demo1">
-                        <span>ITSM Solution
-                        <img class="toggle arrow" id="image1"src="img/secction/angle-right.png">
+                  </div>
+                  <div>
+                    <div type="button" class="btn btn-primary btnSize" onclick="solution1()" data-toggle="collapse" data-target="#demo1">
+                      <span>ITSM Solution
+                      <img class="toggle arrow" id="image1"src="img/secction/angle-right.png">
+                    </span>
+                  </div>
+                    <div id="demo1" class="collapse content-bg">
+                      Adopting a process approach towards management, focusing on customer
+                       needs and IT services for customers rather than IT systems, and stressing continual improvement. 
+                    </div>
+                  </div>
+                  <div>
+                      <div type="button" class="btn btn-primary btnSize" onclick="solution2()" data-toggle="collapse" data-target="#demo2">
+                        <span>Review & Rating
+                        <img class="toggle arrow" id="image2"src="img/secction/angle-right.png">
                       </span>
                     </div>
-                      <div id="demo1" class="collapse content-bg">
-                        Adopting a process approach towards management, focusing on customer
-                         needs and IT services for customers rather than IT systems, and stressing continual improvement. 
+                      <div id="demo2" class="collapse content-bg">
+                        Connect with customers through the power of product of Ratings& Reviews 
                       </div>
                     </div>
                     <div>
-                        <div type="button" class="btn btn-primary btnSize" onclick="solution2()" data-toggle="collapse" data-target="#demo2">
-                          <span>Review & Rating
-                          <img class="toggle arrow" id="image2"src="img/secction/angle-right.png">
-                        </span>
+                      <div type="button" class="btn btn-primary btnSize" onclick="solution3()" data-toggle="collapse" data-target="#demo3">
+                        <span>Clinical solution 
+                        <img class="toggle arrow" id="image3"src="img/secction/angle-right.png">
+                      </span>
+                    </div>
+                      <div id="demo3" class="collapse content-bg">
+                        Description about solution 3
                       </div>
-                        <div id="demo2" class="collapse content-bg">
-                          Connect with customers through the power of product of Ratings& Reviews 
-                        </div>
-                      </div>
-                      <div>
-                        <div type="button" class="btn btn-primary btnSize" onclick="solution3()" data-toggle="collapse" data-target="#demo3">
-                          <span>Clinical solution 
-                          <img class="toggle arrow" id="image3"src="img/secction/angle-right.png">
-                        </span>
-                      </div>
-                        <div id="demo3" class="collapse content-bg">
-                          Description about solution 3
-                        </div>
-                      </div>
-                  </div>
-                </div> -->
-                <div class="filterDiv soln0">
-                    <div class="col-md-6">
-                        <img src="img/secction/ecomsol.jpg" height="440" width="585">
                     </div>
-                    <div class="col-md-6 cb-bg" style="color:white">
-                    <ul>
-                      <li class="list-alignHead"> Ecommerce Solution</li>
-                      <ul>
-                        <li class="list-align"></li>
-                        <ul style="margin-top: 3%">
-                          <li class="list-align1">Simplifies marketing</li>
-                          <li class="list-align1">Automates shipping and taxes</li>
-                          <li class="list-align1">Manage products</li>
-                          <li class="list-align1">Customer & order management</li>
-                          <li class="list-align1">Enhance overall user experience</li>
-                        </ul>
-                      </ul>
-                    </ul>
-                    </div>
-                  </div> 
-                <div class="filterDiv soln1">
-                    <div class="col-md-6">
-                        <img src="img/secction/itsm.jpg" height="440" width="585">
-                    </div>
-                    <div class="col-md-6 cb-bg" style="color:white">
-                        <ul>
-                            <li class="list-alignHead">ITSM Solution</li>
-                            <ul>
-                              <li class="list-align"></li>
-                              <ul style="margin-top: 3%">
-                                <li class="list-align1"> Quality of service</li>
-                                <li class="list-align1"> Customer satisfaction</li>
-                                <li class="list-align1">Governance and reduce risk</li>
-                                <li class="list-align1">Flexibility</li>
-                                <li class="list-align1"> IT costs</li>
-                                <li class="list-align1">Agility for new IT services</li>
-                              </ul>
-                            </ul>
-                          </ul>
-                    </div>
-                  </div>
-                <div class="filterDiv soln2">
-                    <div class="col-md-6">
-                       <img src="img/secction/rating.jpg" height="440" width="585">
-                    </div>
-                    <div class="col-md-6 cb-bg" style="color:white">
-                        <ul>
-                            <li class="list-alignHead">Review & Rating</li>
-                            <ul>
-                              <li class="list-align"></li>
-                            <ul style="margin-top: 3%">
-                              <li class="list-align1">Service issues</li>
-                              <li class="list-align1">Product issues</li>
-                              <li class="list-align1">content</li>
-                            </ul>
-                            </ul>
-                          </ul>
-                    </div>
-                  </div>
-                  <div class="filterDiv soln3">
-                    <div class="col-md-6">
-                       <img src="img/secction/clinical.jpg" height="440" width="585">
-                    </div>
-                    <div class="col-md-6 cb-bg" style="color:white">
-                        <ul>
-                            <li class="list-alignHead">Clinical Solution</li>
-                            <ul>
-                              <li class="list-align"></li>
-                              <ul style="margin-top: 3%">
-                                <li class="list-align1">Study Management</li>
-                                <li class="list-align1">Trial Site Management</li>
-                                <li class="list-align1">Survey Management</li>
-                                <li class="list-align1">Health Device Integration</li>
-                              </ul>
-                            </ul>
-                          </ul>
-                    </div>
-                  </div>
                 </div>
+              </div> -->
+        <div class="filterDiv soln0">
+          <div class="col-md-6 img-align">
+            <img src="img/secction/ecom4.png" height="440" width="585">
+          </div>
+          <div class="col-md-6 cb-bg" style="color:white">
+            <ul class="content-align">
+              <li class="list-alignHead"> Ecommerce Solution</li>
+              <ul>
+                <li class="list-align"></li>
+                <ul style="margin-top: 3%">
+                  <li class="list-align1">New Business Startup Support</li>
+                  <li class="list-align1">Inventory Management</li>
+                  <li class="list-align1">Manage products</li>
+                  <li class="list-align1">Payment management</li>
+                  <li class="list-align1">Promotional Marketing</li>
+                </ul>
+              </ul>
+            </ul>
+          </div>
+        </div>
+        <div class="filterDiv soln1">
+          <div class="col-md-6 img-align">
+            <img src="img/secction/ITSM (1).jpg" height="440" width="585">
+          </div>
+          <div class="col-md-6 cb-bg" style="color:white">
+            <ul class="content-align">
+              <li class="list-alignHead">ITSM Solution</li>
+              <ul>
+                <li class="list-align"></li>
+                <ul style="margin-top: 3%">
+                  <li class="list-align1">User Management</li>
+                  <li class="list-align1"> Configuration Management</li>
+                  <li class="list-align1">Service Desk Functionality</li>
+                  <li class="list-align1">Groups Management</li>
+                  <li class="list-align1">Basic SLA Functionality</li>
+                </ul>
+              </ul>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="filterDiv soln2">
+          <div class="col-md-6 img-align">
+            <img src="img/secction/review5.jpg" height="440" width="585">
+          </div>
+          <div class="col-md-6 cb-bg" style="color:white">
+            <ul class="content-align">
+              <li class="list-alignHead">Review Platform</li>
+              <ul>
+                <li class="list-align"></li>
+                <ul style="margin-top: 3%">
+                  <li class="list-align1">User Management</li>
+                  <li class="list-align1">Product Rating & Review</li>
+                  <li class="list-align1">Vendor Inventory</li>
+                  <li class="list-align1">Advertisement Management</li>
+                  <li class="list-align1">Compare & Review</li>
+                  <li class="list-align1">User Collaboration Forum</li>
+                </ul>
+              </ul>
+            </ul>
+          </div>
+        </div> -->
+        <div class="filterDiv soln3">
+          <div class="col-md-6 img-align">
+            <img src="img/secction/helath2.jpg" height="440" width="585">
+          </div>
+          <div class="col-md-6 cb-bg" style="color:white">
+            <ul class="content-align">
+              <li class="list-alignHead">Health Care</li>
+              <ul>
+                <li class="list-align"></li>
+                <ul style="margin-top: 3%">
+                  <li class="list-align1">Ecommerce & Pharmacy</li>
+                  <li class="list-align1">Billing & Delivery Management</li>
+                  <li class="list-align1">Prescription Management</li>
+                  <li class="list-align1">Medication Guide</li>
+                  <li class="list-align1">Customer Notification</li>
+                  <li class="list-align1">Drugs Management</li>
+                </ul>
+              </ul>
+            </ul>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
   <!--solution  -->
 
-    <!-- <section id="section-applicationdev" class="section appear clearfix">
+
+  <!-- products -->
+
+  <section id="section-product">
+    <div class="container con-res">
+      <div class="row">
+        <h2 style="text-align: center; margin-top: 6%;">Products</h2>
+        <section id="myBtnContainer" class="myBtnContainers">
+          <!-- <button class="btn3 active" onclick="filterSelectionProd('all-products')"> All Products</button> -->
+          <!-- <button class="btn3 active" onclick="filterSelectionProd('prod1','active')">Aviation</button> -->
+          <button class="btn3 active" onclick="filterSelectionProd('prod2','active')">Ticketing Tool</button>
+          <button class="btn3" onclick="filterSelectionProd('prod3')">ECommerce</button>
+          <button class="btn3" onclick="filterSelectionProd('prod4')">Medical Apps</button>
+        </section>
+
+        <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+        <div class="container1">
+          <!-- <div class="filterDivProd all-products">
+              <div class="col-md-6">
+                  <img src="img/secction/allProd.jpg" height="440" width="585">
+              </div>
+              <div class="col-md-6 btn-align cb-bg">
+                <div style="margin-top: 5%;">
+                  <div type="button" class="btn btn-primary btnSize" onclick="product1()" data-toggle="collapse" data-target="#demo8">
+                      <span>AviationRating
+                          <img class="toggle arrow" id="image8"src="img/secction/angle-right.png">
+                        </span>  
+                    </div>
+                  <div id="demo8" class="collapse content-bg">
+                      Understanding client requirements and how they translate to new application features.
+                  </div>
+                </div>
+                <div>
+                  <div type="button" class="btn btn-primary btnSize" onclick="product2()" data-toggle="collapse" data-target="#demo9">
+                    <span>Ticketing Tool
+                    <img class="toggle arrow" id="image9"src="img/secction/angle-right.png">
+                  </span>
+                </div>
+                  <div id="demo9" class="collapse content-bg">
+                      For cloud-based services and technical support to automate and enhance your business operations.
+                  </div>
+                </div>
+                <div>
+                    <div type="button" class="btn btn-primary btnSize" onclick="product3()" data-toggle="collapse" data-target="#demo10">
+                      <span>ECommerce
+                      <img class="toggle arrow" id="image10"src="img/secction/angle-right.png">
+                    </span>
+                  </div>
+                    <div id="demo10" class="collapse content-bg">
+                        Responsive, flexible and proven infrastructure services and solutions that deliver differentiated value to our customer's business.
+                    </div>
+                  </div>
+                  <div>
+                      <div type="button" class="btn btn-primary btnSize" onclick="product4()" data-toggle="collapse" data-target="#demo11">
+                        <span> Medical Apps
+                        <img class="toggle arrow" id="image11"src="img/secction/angle-right.png">
+                      </span>
+                    </div>
+                      <div id="demo11" class="collapse content-bg">
+                          Tedious tasks, and minimizes the number of errors, with the right automation tools it is possible to automate browser tasks, web testing, and online data extraction
+                      </div>
+                    </div>
+              </div>
+            </div> -->
+          <!-- <div class="filterDivProd prod1 show">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/aviation1.jpg" height="440" width="585">
+            </div>
+            <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align">
+                <li class="list-alignHead">Aviation</li>
+                <ul style="margin-top: 3%">
+                  <li class="list-align"></li>
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1"> Parts Upload and Maintenance</li>
+                    <li class="list-align1">Compare Aviation MRO Vendors</li>
+                    <li class="list-align1"> Rate and Review the MRO Vendors</li>
+                    <li class="list-align1">  New Vendor On-boarding</li>
+                    <li class="list-align1">Reviewer User Collaboration  </li>
+                    <li class="list-align1"> Email Notifications</li>
+                    <li class="list-align1">New Business & Claim Business Approval Flow</li>
+                    <li class="list-align1">Rating Highlights</li>
+                    <li class="list-align1"> Advertisement Feature</li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+          </div> -->
+          <div class="filterDivProd prod2">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/tic2.jpg" height="440" width="585">
+            </div>
+            <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align" style="margin-top: 2%;">
+                <li class="list-alignHead">Ticketing Tool</li>
+                <ul>
+
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">User Management</li>
+                    <li class="list-align1">Project and Activity Management</li>
+                    <li class="list-align1">  Approval Flow</li>
+                    <li class="list-align1">Issues and Ticketing Management</li>
+                    <li class="list-align1">Ticket Routing Flow</li>
+                    <li class="list-align1"> Technician Assignment Based on Ticket Context</li>
+                    <li class="list-align1">Reporting</li>
+                    <li class="list-align1">  SLA Management</li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="filterDivProd prod3">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/ecom.png" height="440" width="585">
+            </div>
+            <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align">
+                <li class="list-alignHead">ECommerce</li>
+                <ul>
+                  <li class="list-align"></li>
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">   Product Searching & Listing </li>
+                    <li class="list-align1">Payment Gateway Integration</li>
+                    <li class="list-align1">Cart & Wishlist</li>
+                    <li class="list-align1"> Performance and Storage Needs Seamlessly With Scalable Public</li>
+                    <li class="list-align1">Inventory Management</li>
+                    <li class="list-align1">E-User management</li>
+                    <li class="list-align1"> Email Notifications</li>
+                    <li class="list-align1">Wish List Management and Re-order</li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="filterDivProd prod4">
+            <div class="col-md-6 img-align">
+              <img src="img/secction/clinic2.jpg" height="440" width="585">
+            </div>
+            <div class="col-md-6 cb-bg" style="color:white">
+              <ul class="content-align">
+                <li class="list-alignHead">Medical Apps</li>
+                <ul>
+                  <li class="list-align"></li>
+                  <ul style="margin-top: 3%">
+                    <li class="list-align1">Drug Search and Listing</li>
+                    <li class="list-align1">Drug Management</li>
+                    <li class="list-align1">iOS and Android Apps </li>
+                    <li class="list-align1">   User Notifications</li>
+                    <li class="list-align1"> User Preferences and Favorites</li>
+                    <li class="list-align1"> Customer Outreach</li>
+                    <li class="list-align1">Contact & Social Networking</li>
+                    <li class="list-align1"> Dosage Calculator</li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- products -->
+
+
+
+  <!-- <section id="section-applicationdev" class="section appear clearfix">
      <div class="container">
       <div class="row mar-bot40">
           <div class="col-md-12">
@@ -793,22 +860,27 @@
 
   <!-- about -->
   <section id="section-about" class="section appear clearfix">
-      <div class="container">
-  
-        <div class="row mar-bot40">
-          <div class=" col-md-12">
-            <div class="section-header">
-              <h2 class="section-heading animated" data-animation="bounceInUp">About Us</h2>
-              <p>Cloubiot Solutions helps achieve transforming clients' business, operating and technology models digitally by providing a range of IT services. We are committed to creating products and services to unlock the potential of digital world by harnessing the power of technology. Our key solution offerings are in the areas of Application Development, Support, Maintenance, Mobile Application Solutions, Cloud Computing and IoT. We engage in a massive endeavor of developing multiple web and mobile applications to support your business 
-                strategies with latest cutting-edge technologies through strategic and operational implementation.</p>
-            </div>
+    <div class="container">
+
+      <div class="row mar-bot40">
+        <div class=" col-md-12">
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">About Us</h2>
+            <p class="align-para">Cloubiot Solutions helps achieve transforming clients' business, operating and
+              technology models digitally by providing a range of IT services. We are committed to creating products
+              and services to unlock the potential of digital world by harnessing the power of technology. Our key
+              solution offerings are in the areas of Application Development, Support, Maintenance, Mobile Application
+              Solutions, Cloud Computing and IoT. We engage in a massive endeavor of developing multiple web and mobile
+              applications to support your business
+              strategies with latest cutting-edge technologies through strategic and operational implementation.</p>
           </div>
         </div>
+      </div>
   </section>
-         <!-- spacer section:stats -->
+  <!-- spacer section:stats -->
 
-    
-    <!-- <section id="parallax1" class="section" data-stellar-background-ratio="0.5">
+
+  <!-- <section id="parallax1" class="section" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row appear stats">
             <div class="col-md-3">
@@ -889,10 +961,10 @@
   </section> -->
 
   <!-- contact -->
-  <section id="section-contact" class="section appear clearfix " >
+  <section id="section-contact" class="section appear clearfix ">
     <div class="container col-md-12" style="display: inline;">
 
-      <div class="row mar-bot20">
+      <div class=" mar-bot20">
         <div class="col-md-offset-3 col-md-6">
           <div class="section-header">
             <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
@@ -901,7 +973,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div>
         <div class="col-md-6 col-md-offset-3">
           <div class="cform" id="contact-form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
@@ -909,24 +981,29 @@
             <form action="" method="post" class="contactForm">
 
               <div class="field your-name form-group">
-                <input type="text" name="name" id="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <input type="text" name="name" id="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4"
+                  data-msg="Please enter at least 4 chars">
                 <div class="validation"></div>
               </div>
               <div class="field your-email form-group">
-                <input type="text" name="email" id="email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
+                <input type="text" name="email" id="email" placeholder="Your Email" class="cform-text" size="40"
+                  data-rule="email" data-msg="Please enter a valid email">
                 <div class="validation"></div>
               </div>
               <div class="field subject form-group">
-                <input type="text" name="subject" id="subject" placeholder="Subject" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <input type="text" name="subject" id="subject" placeholder="Subject" class="cform-text" size="40"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
                 <div class="validation"></div>
               </div>
               <div class="field  form-group">
-                <input type="text" name="phone" id="number" pattern="^(\+|(?=.*[0-9]))[- 0-9]+$"  placeholder="Contact Number" class="cform-text" size="15" data-rule="minlen:10" data-msg="Please enter at least 10 digits of contact number">
+                <input type="text" name="phone" id="number" pattern="^(\+|(?=.*[0-9]))[- 0-9]+$" placeholder="Contact Number"
+                  class="cform-text" size="15" data-rule="minlen:10" data-msg="Please enter at least 10 digits of contact number">
                 <div class="validation"></div>
               </div>
 
               <div class="field message form-group">
-                <textarea name="message" id="message" placeholder="Write something about us" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <textarea name="message" id="message" placeholder="How can we help you?" class="cform-textarea"
+                  cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
                 <div class="validation"></div>
               </div>
               <div class="send-btn">
@@ -979,7 +1056,7 @@
       </div>
       <div class="row align-center copyright">
         <div class="col-sm-12">
-          <p>Copyright 2019 &copy; All rights reserved</p>
+          <p>Copyright 2020 &copy; All rights reserved</p>
         </div>
       </div>
       <div class="credits">
@@ -1010,6 +1087,7 @@
   <script src="js/stellar.js"></script>
   <script src="js/jquery.appear.js"></script>
   <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/skrollr.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
