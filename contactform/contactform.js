@@ -95,13 +95,16 @@ jQuery(document).ready(function($) {
             email: document.getElementById("email").value,
             subject: document.getElementById("subject").value,
             contactNumber: document.getElementById("number").value,
-            message: document.getElementById("message").value
+            message: document.getElementById("message").value,
+            applicationId: 1
         }
         if (ferror) return false;
         else var str = request;
         var action = $(this).attr('action');
         if (!action) {
             action = 'http://localhost:8080/cloubiotWAPI/UserController/contactform';
+            // action = 'https://www.cloubiot.com/cloubiotWAPI/UserController/contactform';
+
         }
 
         $.ajax({
