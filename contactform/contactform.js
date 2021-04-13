@@ -102,8 +102,8 @@ jQuery(document).ready(function($) {
         else var str = request;
         var action = $(this).attr('action');
         if (!action) {
-            action = 'http://localhost:8080/cloubiotWAPI/UserController/contactform';
-            // action = 'https://www.cloubiot.com/cloubiotWAPI/UserController/contactform';
+            // action = 'http://localhost:8080/cloubiotWAPI/UserController/contactform';
+            action = 'https://www.cloubiot.com/cloubiotWAPI/UserController/contactform';
 
         }
 
