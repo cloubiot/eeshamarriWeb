@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
   "use strict";
   
+$("#spinner").hide()
 
   //Contact
   $('form.contactForm').submit(function() {
@@ -100,10 +101,12 @@ jQuery(document).ready(function($) {
         }
         if (ferror) return false;
         else var str = request;
+        $("#spinner").show();
+        $("#submit").hide();
         var action = $(this).attr('action');
         if (!action) {
             // action = 'http://localhost:8080/cloubiotWAPI/UserController/contactform';
-            action = 'https://www.cloubiot.com/cloubiotWAPI/UserController/contactform';
+            action = 'https://api.community.guru/cloubiotWAPI/UserController/contactform';
 
         }
 
@@ -128,7 +131,12 @@ jQuery(document).ready(function($) {
             $('#errormessage').fadeIn(100).show();
             $('#errormessage').delay(10000).fadeOut();
            }
-            window.scrollTo(0,2700);
+           $("#submit").show();
+           $("#spinner").hide();
+            // window.scrollTo(0,3300);
+            document.getElementById('section-contact').scrollIntoView({
+              behavior: 'smooth'
+            });
         
             }
 
