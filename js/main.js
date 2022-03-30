@@ -365,6 +365,7 @@ $(function() {                       //run when the DOM is ready
 
 filterSelection("serv1")
 function filterSelection(c,d) {
+
   if(d=="false"){
     $("#demo4").removeClass('collapse in').toggleClass('collapse');
     $("#image4").toggleClass('flip');

@@ -1,5 +1,6 @@
 filterSelections("all")
 function filterSelections(c) {
+
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
