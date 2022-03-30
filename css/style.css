@@ -341,7 +341,7 @@ section.section {
 .navbar {
 	line-height: 100px;
 	/* height: 100px; */
-	background-color: rgba(0,0,0,0);
+	background-color: rgb(137, 9, 9);
 	display: block;
 	vertical-align: middle;
 	text-align: center;
@@ -1056,14 +1056,15 @@ Media queries
 ========================================= */
 @media (min-width: 959px) and (max-width: 1199px) {
 	.navbar-nav {
-		margin-top: 20px;
+		margin-top:-52px;
 	}
 }
+
 
 @media only screen and (min-device-width : 979px) and (max-device-width : 1024px)  {
 
 	.navbar-nav {
-		margin-top: 20px;
+		margin-top: -52px;
 	}
 }
 
@@ -1077,7 +1078,7 @@ Media queries
 @media (max-width: 767px) {
 
 	.navbar.navbar-fixed-top {
-		background-color:rgb(5, 42, 62) !important;
+		background-color:rgb(137, 9, 9) !important;
 	}
 	.navbar .navbar-collapse ul.nav {
 		background-color: #444;
@@ -1533,8 +1534,9 @@ Filter
 	#menu-hide{
 		display: none;
 	}
+
 	.img-align{
-		display: none;
+		/* display: none; */
 	}
 	.content-align{
 		padding-bottom: 22px;
