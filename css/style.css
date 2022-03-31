@@ -308,7 +308,7 @@ a:hover {
 
 section.section {
 	margin:0;
-	padding: 80px 0 60px 0;
+	/* padding: 80px 0 60px 0; */
 }
 
 .bg-white {
@@ -1244,7 +1244,8 @@ Filter
 	padding: 12px 16px;
 	background-color: #890909;
 	cursor: pointer;
-	color: white
+	color: white;
+	border: 1px solid;
   }
   .btn3 {
 	border: none;
@@ -1334,7 +1335,7 @@ Filter
   }
 
 .cb-bg{
-	min-height: 440px;
+	min-height: 360px;
     background: #890909;
 }
 .cb-bg1{
@@ -1357,7 +1358,7 @@ Filter
 }
 .list-alignHead{
 	line-height: 26px;
-    /* text-align: left; */
+    text-align: left;
     font-weight: 500;
 	font-size: 20px;
 	list-style-type: none;
@@ -1414,7 +1415,7 @@ Filter
 }
 
 #section-contact{
-	padding-top: 56px;
+	/* padding-top: 56px; */
 }
 #res-top{
 	margin-top: 110px;
@@ -1423,8 +1424,9 @@ Filter
 
 @media (max-width: 768px){
 #myBtnContainer{
-	padding-right: 15px;
-    padding-left: 15px;
+	/* padding-right: 15px; */
+	/* padding-left: 15px; */
+	padding: 12px 16px;
 }
 .list-alignHead{
 	margin-left: 20px;
@@ -1459,15 +1461,15 @@ Filter
     font-size: 14px;
     vertical-align: bottom;
 	line-height: 18px; */
-	width: 98px;
-    height: 35px;
+	width: 207px;
+    /* height: 35px; */
     border: 1px solid;
-    font-size: 16px;
+    font-size: 14px;
     vertical-align: bottom;
     line-height: 33px;
     padding-top: 0px;
 	overflow: hidden;
-	padding-left: 3px;
+	padding: 3px;
 }
 .btn3{
 	/* width: 112px;
@@ -1495,7 +1497,8 @@ Filter
 		width: 134px;
 	}
 	.btn2{
-		width: 134px;
+		width: 235px;
+		/* margin-bottom: inherit; */
 	}
 	.btn3{
 		width: 134px;
@@ -1511,13 +1514,15 @@ Filter
 }
 	@media (max-width: 320px){
 	.btn2{
-		width: 100px;
+		width: 233px;
+		/* margin-bottom: inherit; */
 	}
 }
 
 @media (max-width: 420px){
 	.content-align{
-       padding-left: 0px;
+	   padding-left: 0px;
+	   color: white;
 	}
 }
 
@@ -1540,9 +1545,10 @@ Filter
 	}
 	.content-align{
 		padding-bottom: 22px;
+		color: white;
 	 }
 	 .cb-bg{
-		min-height: unset;
+		min-height: auto;
 	 }
 }
 
