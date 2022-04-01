@@ -1336,7 +1336,8 @@ Filter
 
 .cb-bg{
 	min-height: 360px;
-    background: #890909;
+	background: #890909;
+	
 }
 .cb-bg1{
 	min-height: 440px;
@@ -1584,10 +1585,12 @@ Filter
 	 }
 	 .cb-bg{
 		min-height: auto;
+		width: 100%;
 	 }
 	 .img-veena{
-		width: 415px;
-    	height: auto;
+		width: 100%;
+		height: auto;
+		margin-left: 0;
 	}
 }
 
