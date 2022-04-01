@@ -1081,14 +1081,14 @@ Media queries
 		background-color:rgb(137, 9, 9) !important;
 	}
 	.navbar .navbar-collapse ul.nav {
-		background-color: #444;
+		background-color: rgb(137, 9, 9);
 		width: 100%;
 		float: none;
 		margin:0;
 		padding:0;
 	}
 	.navbar .navbar-collapse ul.nav li {
-		border-bottom: 1px solid #666;
+		border-bottom: 1px solid white;
 	}
 	section.featured {
 		padding-top: 80px;
@@ -1435,6 +1435,7 @@ Filter
 	padding: 0px;
 	
 }
+
 #res-top{
 	margin-top: 116px;
 }
@@ -1494,7 +1495,7 @@ Filter
 }
 @media (max-width: 500px){
 	.btn1{
-		width: 134px;
+		width: 235px;
 	}
 	.btn2{
 		width: 235px;
@@ -1503,27 +1504,53 @@ Filter
 	.btn3{
 		width: 134px;
 	}
+	.img-align{
+		display:flex;
+	}
+	.img-veena{
+		width: 360px;
+    	height: auto;
+	}
 }
 @media (max-width: 300px){
 	.btn1{
-		width: 100px;
+		width: 177px;
 	}
 	.btn3{
 		width: 100px;
 	}
+	.img-align{
+		display:flex;
+	}
+	
 }
 	@media (max-width: 320px){
 	.btn2{
 		width: 233px;
 		/* margin-bottom: inherit; */
 	}
+	.img-align{
+		display:flex;
+	}
+	.img-veena{
+		width: 229px;
+    	height: auto;
+	}
 }
 
-@media (max-width: 420px){
+@media (max-width: 425px){
 	.content-align{
 	   padding-left: 0px;
 	   color: white;
 	}
+	.img-align{
+		display:flex;
+	}
+	.img-veena{
+		width: 229px;
+    	height: auto;
+	}
+	
 }
 
 @media (min-width: 768px)and (max-width: 2560px){
@@ -1533,6 +1560,14 @@ Filter
 #menu-show1{
 	display: none !important;
 }
+/* .img-veena{
+	width: 456px;
+    height: 506px;
+}
+.img-Mridangam{
+	width: 456px;
+    height: 954px;
+} */
 }
 
 @media (max-width: 768px){
@@ -1541,15 +1576,19 @@ Filter
 	}
 
 	.img-align{
-		/* display: none; */
+		display:flex;
 	}
 	.content-align{
-		padding-bottom: 22px;
+		/* padding-bottom: 22px; */
 		color: white;
 	 }
 	 .cb-bg{
 		min-height: auto;
 	 }
+	 .img-veena{
+		width: 679px;
+    	height: auto;
+	}
 }
 
 .opt-align{    
@@ -1622,3 +1661,23 @@ color: white;
     margin-left: 11px;
   }
   
+  @media screen and (max-width: 400px){
+	.img-veena{
+		width: 285px;
+    	height: auto;
+	}
+	.img-Mridangam{
+		width: 229px;
+    	height: auto;
+	}
+  }
+  /* @media screen and (max-width: 700px){
+	.img-veena{
+		width: 454px;
+    	height: auto;
+	}
+	.img-Mridangam{
+		width: 456px;
+    	height: auto;
+	} */
+  }
