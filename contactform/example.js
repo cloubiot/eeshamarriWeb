@@ -8,8 +8,8 @@ jQuery(document).ready(function($) {
           }
          
          var str = request;
-          var action = 'http://localhost:8081/browsingWAPI/admin/getAllComment';
-            // var action = 'https://api.community.guru/browsingWAPI/comment/saveComment';
+        //   var action = 'http://localhost:8081/browsingWAPI/admin/getAllComment';
+            var action = 'https://api.community.guru/browsingWAPI/admin/getAllComment';
 
           $.ajax({
               headers: new Headers({

@@ -52,8 +52,8 @@ $("#spinner").hide()
         $("#submit").hide();
         var action = $(this).attr('action');
         if (!action) {
-            action = 'http://localhost:8081/browsingWAPI/comment/saveComment';
-            // action = 'https://api.community.guru/browsingWAPI/comment/saveComment';
+            // action = 'http://localhost:8081/browsingWAPI/comment/saveComment';
+            action = 'https://api.community.guru/browsingWAPI/comment/saveComment';
 
         }
 
