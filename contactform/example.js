@@ -8,8 +8,8 @@ jQuery(document).ready(function($) {
           }
          
          var str = request;
-        //   var action = 'http://localhost:8081/browsingWAPI/admin/getAllComment';
-            var action = 'https://api.community.guru/browsingWAPI/admin/getAllComment';
+          var action = 'http://localhost:8081/browsingWAPI/admin/getAllComment';
+            // var action = 'https://api.community.guru/browsingWAPI/admin/getAllComment';
 
           $.ajax({
               headers: new Headers({
@@ -25,17 +25,24 @@ jQuery(document).ready(function($) {
               success: function(msg) {
                 let txt="";
                
-                const d = new Date();
+                
                 if(msg.isSuccess){
-                 console.log(msg);
+                //  console.log(msg);
                 var person= msg.comment;  
                     person.forEach((xyz) => {
                                 txt += "<b> Name : </b>" + xyz.name + "<br>";
                                 txt +="<b> Comment : </b>" + xyz.comment + "<br>" ;
-                                
-                                d.setTime(xyz.createdDate);
-                                txt +="<b> Date And Time : </b>" + d +"<br>" + "<br>";
-
+                                // d.setTime(xyz.createdDate);
+                                var timestamp = xyz.createdDate
+                                var date = new Date(timestamp);
+                                    var Dt=date.toLocaleString('en-US');
+                                    // date.getDate()+
+                                    //       "/"+(date.getMonth()+1)+
+                                    //       "/"+date.getFullYear()+
+                                    //       " "+date.getHours()+
+                                    //       ":"+date.getMinutes()+
+                                        //   ":"+date.getSeconds();   
+                                txt +="<b> Date And Time : </b>" + Dt +"<br>" + "<br>";
                     }) 
                     document.getElementById("comment").innerHTML=txt;
                 }

@@ -1586,7 +1586,7 @@ Filter
 		min-height: auto;
 	 }
 	 .img-veena{
-		width: 679px;
+		width: 415px;
     	height: auto;
 	}
 }
@@ -1671,13 +1671,4 @@ color: white;
     	height: auto;
 	}
   }
-  /* @media screen and (max-width: 700px){
-	.img-veena{
-		width: 454px;
-    	height: auto;
-	}
-	.img-Mridangam{
-		width: 456px;
-    	height: auto;
-	} */
-  }
+  

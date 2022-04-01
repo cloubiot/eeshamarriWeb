@@ -52,8 +52,8 @@ $("#spinner").hide()
         $("#submit").hide();
         var action = $(this).attr('action');
         if (!action) {
-            // action = 'http://localhost:8081/browsingWAPI/comment/saveComment';
-            action = 'https://api.community.guru/browsingWAPI/comment/saveComment';
+            action = 'http://localhost:8081/browsingWAPI/comment/saveComment';
+            // action = 'https://api.community.guru/browsingWAPI/comment/saveComment';
 
         }
 
@@ -73,6 +73,57 @@ $("#spinner").hide()
                 $('.contactForm').find("input, textarea").val("");
                 $('#sendmessage').fadeIn(100).show();
                 $('#sendmessage').delay(10000).fadeOut();
+                jQuery(document).ready(function($) {
+                  "use strict";
+                  
+                   var request = {
+                          //   name: document.getElementById("name").value,
+                          //   comment: document.getElementById("message").value,
+                            websiteId: 2
+                        }
+                       
+                       var str = request;
+                        var action = 'http://localhost:8081/browsingWAPI/admin/getAllComment';
+                          // var action = 'https://api.community.guru/browsingWAPI/admin/getAllComment';
+              
+                        $.ajax({
+                            headers: new Headers({
+                                'Content-Type': 'application/json;charset=utf-8',
+                                'Cache-Control': 'no-cache',
+                                'Pragma': 'no-cache',
+                
+                            }),
+                            type: "POST",
+                            url: action,
+                            data: JSON.stringify(str),
+                            dataType: "json",
+                            success: function(msg) {
+                              let txt="";
+                             
+                              const d = new Date();
+                              if(msg.isSuccess){
+                              //  console.log(msg);
+                              var person= msg.comment;  
+                                  person.forEach((xyz) => {
+                                              txt += "<b> Name : </b>" + xyz.name + "<br>";
+                                              txt +="<b> Comment : </b>" + xyz.comment + "<br>" ;
+                                              var timestamp = xyz.createdDate
+                                              var date = new Date(timestamp);
+                                                  var Dt=date.toLocaleString('en-US');
+                                                  // date.getDate()+
+                                                  //       "/"+(date.getMonth()+1)+
+                                                  //       "/"+date.getFullYear()+
+                                                  //       " "+date.getHours()+
+                                                  //       ":"+date.getMinutes()+
+                                                      //   ":"+date.getSeconds();   
+                                              txt +="<b> Date And Time : </b>" + Dt +"<br>" + "<br>";
+                                  }) 
+                                  document.getElementById("comment").innerHTML=txt;
+                              }
+                            }
+                        });
+                        return false;
+                  });
               }
            else{
             $('#errormessage').fadeIn(100).show();
