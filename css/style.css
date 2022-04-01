@@ -340,7 +340,7 @@ section.section {
 =========================== */
 .navbar {
 	line-height: 100px;
-	/* height: 100px; */
+	height: 100px;
 	background-color: rgb(137, 9, 9);
 	display: block;
 	vertical-align: middle;
