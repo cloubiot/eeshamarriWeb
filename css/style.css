@@ -369,7 +369,7 @@ section.section {
 	line-height: 100%;
 	vertical-align: middle;
 	color: #fff;
-	font-size: 14px;
+	font-size: 13px;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 }
@@ -1058,7 +1058,7 @@ Media queries
 ========================================= */
 @media (min-width: 959px) and (max-width: 1199px) {
 	.navbar-nav {
-		margin-top:-52px;
+		margin-top:11px;
 	}
 	
 }
@@ -1088,7 +1088,7 @@ Media queries
 @media only screen and (min-device-width : 979px) and (max-device-width : 1024px)  {
 
 	.navbar-nav {
-		margin-top: -52px;
+		margin-top: 11px;
 	}
 }
 

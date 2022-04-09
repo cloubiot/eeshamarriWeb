@@ -67,3 +67,13 @@ a:hover {
 a.scrollup{
 	background:#85b0be;
 }
+a:visited {
+	color:white;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  a:hover {
+	color: blue;
+	background-color: transparent;
+	text-decoration: underline;
+  }
